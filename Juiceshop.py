@@ -27,8 +27,8 @@ class LoginPage(BaseElements):
         text_error = self.text_error_message()
         return text_error
 
-class SearshPage(BaseElements):
+class SearchPage(BaseElements):
 
-    def result_search(self):
-        result = self.element_search_value()
-        return result.text
+    def text_result_search(self):
+        text_search = self.text_search_value()
+        return text_search

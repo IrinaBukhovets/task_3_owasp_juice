@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-
+from selenium.webdriver.common.keys import Keys
 
 class BasePage:
 
@@ -27,3 +27,9 @@ class BasePage:
         browser = Browser()
         text = browser.find_element(locator).text
         return text
+    
+    def enter_word_and_enter(self, locator, word):
+        Browser().find_element(locator).send_keys(word)
+        Browser().find_element(locator).send_keys(Keys.ENTER)
+        
+    
