@@ -1,5 +1,5 @@
-from task_3_owasp_juice.BaseElements import BaseElements
-from task_3_owasp_juice.BasePage import BasePage
+from BaseElements import BaseElements
+
 
 class Label(BaseElements):
     def close_label(self):
@@ -20,9 +20,12 @@ class LoginPage(BaseElements):
         input_password = self.enter_word_password(password = password)
         button_log_in = self.press_button_log_in()
 
-    def error_message(self):
-        error_message = self.element_error_message()
-        return error_message.text
+    def find_error_message_element_page(self):
+        self.element_error_message()
+
+    def text_error_message_invalid_log_pass(self):
+        text_error = self.text_error_message()
+        return text_error
 
 class SearshPage(BaseElements):
 

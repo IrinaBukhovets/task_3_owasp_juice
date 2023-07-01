@@ -1,4 +1,4 @@
-from task_3_owasp_juice.Browser import Browser
+from Browser import Browser
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,8 +9,8 @@ class BasePage:
 
     def find_element_page(self, locator, browser):
         browser = Browser()   
-        browser.find_element(self, locator)
-        return WebDriverWait(browser, 5).until(EC.presence_of_element_located(locator), message=f"Can't find element by locator {locator}")  
+        browser.find_element(locator)
+        #return WebDriverWait(browser, 5).until(EC.presence_of_element_located(locator), message=f"Can't find element by locator {locator}")  
 
     def enter_word(self, locator, word):
         Browser().find_element(locator).send_keys(word)
@@ -22,3 +22,8 @@ class BasePage:
     def element_is_opened(self, locator, browser):
         browser = Browser()
         browser.find_element(locator).is_displayed()
+
+    def text(self, locator, browser):
+        browser = Browser()
+        text = browser.find_element(locator).text
+        return text

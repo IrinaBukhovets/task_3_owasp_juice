@@ -2,15 +2,15 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from task_3_owasp_juice.Singletone import Singletone
+from Singletone import Singletone
 
 class Browser(metaclass=Singletone):
     def __init__(self):
         self.webdriver = {}
 
     def set_up_driver(self):
-        self.webdriver["edge"] = webdriver.Edge(executable_path="C:\\Users\\User\\Desktop\\msedgedriver.exe")
-        #self.webdriver["edge"] = webdriver.Firefox()
+        #self.webdriver["edge"] = webdriver.Edge(executable_path="C:\\Users\\User\\Desktop\\msedgedriver.exe")
+        self.webdriver["edge"] = webdriver.Firefox()
         
     def get_driver(self):
         return self.webdriver["edge"]

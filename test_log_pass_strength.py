@@ -1,5 +1,5 @@
-from task_3_owasp_juice.Juiceshop import LandingPage
-from task_3_owasp_juice.Juiceshop import LoginPage
+from Juiceshop import LandingPage
+from Juiceshop import LoginPage
 
 
 
