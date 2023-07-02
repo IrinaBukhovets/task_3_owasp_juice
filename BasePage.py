@@ -1,16 +1,15 @@
-from Browser import Browser
-from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from Browser import Browser
+
 
 class BasePage:
 
     def find_element_page(self, locator, browser):
         browser = Browser()   
         browser.find_element(locator)
-        #return WebDriverWait(browser, 5).until(EC.presence_of_element_located(locator), message=f"Can't find element by locator {locator}")  
+        return WebDriverWait(browser, 5).until(EC.presence_of_element_located(locator), message=f"Can't find element by locator {locator}")  
 
     def enter_word(self, locator, word):
         Browser().find_element(locator).send_keys(word)

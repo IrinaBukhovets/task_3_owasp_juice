@@ -1,14 +1,15 @@
+import pytest
 from Juiceshop import LandingPage
 from Juiceshop import LoginPage
 from Juiceshop import Label
-import pytest
+
 
 
 @pytest.mark.parametrize("email", ['stan@juice-sh.op', 'admin@juice-sh.op'])
-@pytest.mark.parametrize("password", ['Aa123456', ')4ever', 'admin123', '1qaz@WSX', 'P@ssw0rd','123456QQAqqa_','1qaz!QAZ','wowecarts@123','film@123','Spiritwear_2004'])  
+@pytest.mark.parametrize("password", ['Aa123456', ')4ever', 'admin', '1qaz@WSX', 'P@ssw0rd','123456QQAqqa_','1qaz!QAZ','wowecarts@123','film@123','Spiritwear_2004'])  
 @pytest.mark.parametrize ("result", ['Invalid email or password.'])                 
 
-def test_log_pass_strength(browser, email, password, result):
+def test_password_strength(browser, email, password, result):
     close_label = Label()
     close_label.close_label()
     log_in_account = LandingPage()
