@@ -11,6 +11,11 @@ class BasePage:
         browser.find_element(locator)
         return WebDriverWait(browser, 5).until(EC.presence_of_element_located(locator), message=f"Can't find element by locator {locator}")  
 
+    def page_is_opened(self, locator, browser):
+        browser = Browser()
+        browser.find_element(locator).is_displayed()
+
+
     def enter_word(self, locator, word):
         Browser().find_element(locator).send_keys(word)
 
