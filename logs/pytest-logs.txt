@@ -1,0 +1,1 @@
+2023-07-04 20:48:21 INFO Applicable driver not found; attempting to install with Selenium Manager (Beta)

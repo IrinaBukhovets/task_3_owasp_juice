@@ -5,15 +5,15 @@ from Browser import Browser
 
 class BaseElements(BasePage):
 
-    locator_button_close_label = (By.XPATH, "//button[@aria-label='Close Welcome Banner']")
-    locator_button_search = (By.XPATH, "//mat-search-bar[@aria-label='Click to search']")
+    locator_button_close_label = (By.XPATH, "//button[contains(@aria-label,'lose')]")
+    locator_button_search = (By.XPATH, "//mat-search-bar[contains(@aria-label,'lick')]")
     locator_search_query = (By.XPATH, "//input[@id='mat-input-0']")
     locator_button_account = (By.ID, "navbarAccount")
     locator_button_login = (By.ID, "navbarLoginButton")
     locator_email = (By.ID, "email")
     locator_password = (By.ID, "password")
     locator_button_log_in = (By.ID, "loginButton")
-    locator_error_message = (By. XPATH, "//div[@class='error ng-star-inserted']")
+    locator_error_message = (By. XPATH, "//div[contains(@class,'error')]")
     locator_search_value = (By.XPATH, "//span[@id='searchValue']")
 
     def press_button_close_label(self):

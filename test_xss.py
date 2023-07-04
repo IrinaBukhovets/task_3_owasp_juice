@@ -17,5 +17,5 @@ def test_xss(browser):
     text_result_search = SearchPage()
     result_search = text_result_search.text_result_search()
     logger.info("Открыта страница с результатом поиска")
-    assert result_search == search
+    assert result_search == search, "Текст в результате поиска НЕ соответствует тексту поискового запроса"
     logger.warning("Текст в результате поиска соответствует тексту поискового запроса")
